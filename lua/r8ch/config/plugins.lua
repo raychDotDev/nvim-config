@@ -9,6 +9,9 @@ return {
 		end,
 	},
 	{
+		'andweeb/presence.nvim'
+	},
+	{
 		'nvim-lua/plenary.nvim'
 	},
 	{
@@ -70,12 +73,12 @@ return {
 				scope = 'cursor', -- 'cursor', 'line' this changes the scope, so instead of showing errors under the cursor, it shows errors on the entire line.
 				padding_top = 0,
 				padding_right = 0,
-				text_align = 'right',      -- 'left', 'right'
-				placement = 'top',         -- 'top', 'inline'
-				inline_padding_left = 0,   -- the padding left when the placement is inline
+				text_align = 'right',                      -- 'left', 'right'
+				placement = 'top',                         -- 'top', 'inline'
+				inline_padding_left = 0,                   -- the padding left when the placement is inline
 				update_event = { 'DiagnosticChanged', 'BufReadPost' }, -- the event that updates the diagnostics cache
-				toggle_event = {},         -- if InsertEnter, can toggle the diagnostics on inserts
-				show_sign = false,         -- set to true if you want to render the diagnostic sign before the diagnostic message
+				toggle_event = {},                         -- if InsertEnter, can toggle the diagnostics on inserts
+				show_sign = false,                         -- set to true if you want to render the diagnostic sign before the diagnostic message
 				render_event = { 'DiagnosticChanged', 'CursorMoved' },
 				border_chars = {
 					top_left = "┌",
@@ -89,25 +92,25 @@ return {
 			})
 		end
 	},
-	{
-		"williamboman/mason.nvim",
-		config = function()
-			require("mason").setup()
-		end
-	},
+
 	{
 		"neovim/nvim-lspconfig",
 	},
 	{
+		"williamboman/mason.nvim",
+		config = function()
+		end
+	},
+	{
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
+			require("mason").setup()
 			require("mason-lspconfig").setup {
-				ensure_installed = { "lua_ls", "ts_ls", "csharp_ls", "jdtls" }
+				ensure_installed = { "lua_ls", "ts_ls", "csharp_ls" }
 			}
 			require("lspconfig").lua_ls.setup {}
 			require("lspconfig").ts_ls.setup {}
 			require("lspconfig").csharp_ls.setup {}
-			require("lspconfig").jdtls.setup {}
 		end
 	},
 	{
@@ -127,6 +130,12 @@ return {
 				desc = "Buffer Local Keymaps (which-key)",
 			},
 		},
+	},
+	{
+		"ray-x/lsp_signature.nvim",
+		event = "VeryLazy",
+		opts = {},
+		config = function(_, opts) require 'lsp_signature'.setup(opts) end
 	},
 	{
 		'numToStr/Comment.nvim',
