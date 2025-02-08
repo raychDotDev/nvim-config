@@ -9,3 +9,5 @@ vim.keymap.set("n", "<leader>f", ":lua vim.lsp.buf.format()\n")
 vim.keymap.set("n", "<leader>D", ":lua require'telescope.builtin'.diagnostics{}\n<Esc>")
 vim.keymap.set("n", "<leader>R", vim.lsp.buf.references);
 vim.keymap.set("n", "<leader>h", ":nohlsearch\n")
+
+vim.api.nvim_create_user_command("LinesCountCS", '!git ls-files \"*.cs\" | xargs wc -l', {});
