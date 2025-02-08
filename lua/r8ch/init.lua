@@ -6,3 +6,4 @@ vim.cmd("set clipboard=unnamedplus")
 
 require("r8ch.remap")
 require("r8ch.config.lazy")
+

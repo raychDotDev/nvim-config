@@ -1,12 +1,12 @@
 return {
 	{
-		"rebelot/kanagawa.nvim",
-		lazy = false, -- make sure we load this during startup if it is your main colorscheme
-		priority = 1000, -- make sure to load this before all the other start plugins
+		"https://gitlab.com/bartekjaszczak/finale-nvim",
+
+		priority = 1000,
 		config = function()
-			-- load the colorscheme here
-			vim.cmd([[colorscheme kanagawa]])
-		end,
+			-- Activate the theme
+			vim.cmd.colorscheme("finale")
+		end
 	},
 	{
 		'andweeb/presence.nvim'
@@ -70,7 +70,7 @@ return {
 					return diagnostic.message
 				end,
 				gap_size = 1,
-				scope = 'cursor', -- 'cursor', 'line' this changes the scope, so instead of showing errors under the cursor, it shows errors on the entire line.
+				scope = 'line', -- 'cursor', 'line' this changes the scope, so instead of showing errors under the cursor, it shows errors on the entire line.
 				padding_top = 0,
 				padding_right = 0,
 				text_align = 'right',                      -- 'left', 'right'
@@ -213,5 +213,25 @@ return {
 		config = function()
 			vim.cmd(":TSUpdate");
 		end
+	},
+	{
+		'nvim-lualine/lualine.nvim',
+		dependencies = { 'nvim-tree/nvim-web-devicons' },
+		opts = {
+			theme = "finale"
+		}
+	},
+	{
+		"utilyre/barbecue.nvim",
+		name = "barbecue",
+		version = "*",
+		dependencies = {
+			"SmiteshP/nvim-navic",
+			"nvim-tree/nvim-web-devicons", -- optional dependency
+		},
+		opts = {
+			theme = "finale"
+		},
 	}
 }
+
