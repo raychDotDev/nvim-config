@@ -18,6 +18,9 @@ return {
 		'kyazdani42/nvim-web-devicons'
 	},
 	{
+		'ThePrimeagen/vim-be-good'
+	},
+	{
 		"nvim-tree/nvim-tree.lua",
 		config = function()
 			-- disable netrw at the very start of your init.lua
@@ -92,7 +95,28 @@ return {
 			})
 		end
 	},
-
+	{
+		'xiyaowong/transparent.nvim',
+		config = function()
+			require("transparent").setup({
+				-- table: default groups
+				groups = {
+					'Normal', 'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',
+					'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String', 'Function',
+					'Conditional', 'Repeat', 'Operator', 'Structure', 'LineNr', 'NonText',
+					'SignColumn', 'CursorLine', 'CursorLineNr',
+					'EndOfBuffer',
+				},
+				-- table: additional groups that should be cleared
+				extra_groups = {},
+				-- table: groups you don't want to clear
+				exclude_groups = {},
+				-- function: code to be executed after highlight groups are cleared
+				-- Also the user event "TransparentClear" will be triggered
+				on_clear = function() end,
+			})
+		end
+	},
 	{
 		"neovim/nvim-lspconfig",
 	},
@@ -106,11 +130,12 @@ return {
 		config = function()
 			require("mason").setup()
 			require("mason-lspconfig").setup {
-				ensure_installed = { "lua_ls", "ts_ls", "csharp_ls" }
+				ensure_installed = { "lua_ls", "ts_ls", "csharp_ls", "clangd" }
 			}
 			require("lspconfig").lua_ls.setup {}
 			require("lspconfig").ts_ls.setup {}
 			require("lspconfig").csharp_ls.setup {}
+			require("lspconfig").clangd.setup {}
 		end
 	},
 	{
@@ -232,6 +257,8 @@ return {
 		opts = {
 			theme = "finale"
 		},
+	},
+	{
+		'voldikss/vim-floaterm'
 	}
 }
-
