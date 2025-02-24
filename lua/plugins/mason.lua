@@ -9,21 +9,21 @@ return {
 				ensure_installed = {
 					"lua_ls",
 					"csharp_ls",
-					"clangd",
 					"ts_ls",
-					"pylsp"
+					"pylsp",
+					"html"
 				},
 			}
 			require("lspconfig").lua_ls.setup {}
 			require("lspconfig").csharp_ls.setup {}
+			require("lspconfig").ts_ls.setup {}
 			require("lspconfig").clangd.setup {
 				cmd = {
-					"clangd",
-					"--enable-config",
-					"--pretty"
+					"C:/Program Files/LLVM/bin/clangd.exe",
+					"--log=verbose"
 				}
 			}
-			require("lspconfig").ts_ls.setup {}
+			require("lspconfig").html.setup{}
 		end
 	}
 }

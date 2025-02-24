@@ -1,6 +1,6 @@
 vim.opt.wrap = false
-vim.o.shiftwidth = 2
-vim.o.tabstop = 2
+vim.o.shiftwidth = 3
+vim.o.tabstop = 3
 vim.o.showtabline = 2
 vim.opt.relativenumber = true
 vim.opt.number = true
