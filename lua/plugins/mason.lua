@@ -11,19 +11,16 @@ return {
 					"csharp_ls",
 					"ts_ls",
 					"pylsp",
-					"html"
+					"html",
+					"clangd"
 				},
 			}
 			require("lspconfig").lua_ls.setup {}
 			require("lspconfig").csharp_ls.setup {}
 			require("lspconfig").ts_ls.setup {}
-			require("lspconfig").clangd.setup {
-				cmd = {
-					"C:/Program Files/LLVM/bin/clangd.exe",
-					"--log=verbose"
-				}
-			}
-			require("lspconfig").html.setup{}
+			require('lspconfig').clangd.setup{}
+			require("lspconfig").html.setup {}
+			require("lspconfig").pylsp.setup {}
 		end
 	}
 }
