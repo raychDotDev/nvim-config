@@ -9,7 +9,7 @@ return {
 			-- {"3rd/image.nvim", opts = {}}, -- Optional image support in preview window: See `# Preview Mode` for more information
 		},
 		keys = {
-			{ "<leader>e", "<cmd>:Neotree toggle right<cr>", desc = "File explorer" },
+			{ "<leader>e", "<cmd>:Neotree toggle left<cr>", desc = "File explorer" },
 		},
 		opts = {
 			enable_git_status = true,
