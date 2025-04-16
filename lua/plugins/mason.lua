@@ -12,15 +12,17 @@ return {
 					"ts_ls",
 					"pylsp",
 					"html",
-					"clangd"
+					"clangd",
+					"glsl_analyzer"
 				},
 			}
 			require("lspconfig").lua_ls.setup {}
 			require("lspconfig").csharp_ls.setup {}
 			require("lspconfig").ts_ls.setup {}
-			require('lspconfig').clangd.setup{}
+			require('lspconfig').clangd.setup {}
 			require("lspconfig").html.setup {}
 			require("lspconfig").pylsp.setup {}
+			require("lspconfig").glsl_analyzer.setup {}
 		end
 	}
 }
