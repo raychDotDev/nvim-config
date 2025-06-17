@@ -14,6 +14,7 @@ return {
 
 					branch = 'mega'
 				},
+				"zootedb0t/citruszest.nvim",
 				"sainnhe/gruvbox-material",
 				{
 					"mcchrish/zenbones.nvim",
