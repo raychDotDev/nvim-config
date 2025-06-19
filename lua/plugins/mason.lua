@@ -15,6 +15,7 @@ return {
 					"clangd",
 					"glsl_analyzer",
 					"rust_analyzer",
+					"powershell_es",
 				},
 			}
 			require("lspconfig").lua_ls.setup {}
@@ -27,6 +28,9 @@ return {
 			require("lspconfig").pylsp.setup {}
 			require("lspconfig").glsl_analyzer.setup {}
 			require("lspconfig").rust_analyzer.setup {}
+			require('powershell').setup({
+				bundle_path = vim.fn.stdpath "data" .. "/mason/packages/powershell-editor-services",
+			})
 		end
 	}
 }
