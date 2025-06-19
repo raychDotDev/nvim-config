@@ -13,18 +13,22 @@ return {
 					"pylsp",
 					"html",
 					"clangd",
-					"glsl_analyzer"
+					"glsl_analyzer",
+					"rust_analyzer",
+					"powershell_es",
 				},
 			}
 			require("lspconfig").lua_ls.setup {}
 			require("lspconfig").csharp_ls.setup {}
 			require("lspconfig").ts_ls.setup {}
 			require('lspconfig').clangd.setup {
-				cmd = { "C:/Program Files/LLVM/bin/clangd"}
+				cmd = { "C:/Program Files/LLVM/bin/clangd" }
 			}
 			require("lspconfig").html.setup {}
 			require("lspconfig").pylsp.setup {}
 			require("lspconfig").glsl_analyzer.setup {}
+			require("lspconfig").rust_analyzer.setup {}
+			require("lspconfig").powershell_es.setup {}
 		end
 	}
 }
