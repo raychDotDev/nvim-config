@@ -19,9 +19,7 @@ return {
 				{
 					"mcchrish/zenbones.nvim",
 					after = function(theme)
-						print("AAAAAA");
 						require("zenbones").setup({
-							transparent = false
 						})
 					end,
 					whitelist = { "kanagawabones", "seoulbones" }
