@@ -1,5 +1,4 @@
 
-
 --PLUGINS
 require("config.lazy")
 
