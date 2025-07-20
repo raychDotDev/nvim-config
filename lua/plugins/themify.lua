@@ -24,6 +24,7 @@ return {
 					end,
 					whitelist = { "kanagawabones", "seoulbones" }
 				},
+				'AlexvZyl/nordic.nvim',
 				'default'
 			})
 		end
