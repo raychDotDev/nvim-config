@@ -17,6 +17,7 @@ return {
 					"html",
 					"glsl_analyzer",
 					"rust_analyzer",
+					"denols"
 				},
 			}
 			require("lspconfig").lua_ls.setup {
@@ -50,6 +51,9 @@ return {
 				capabilities = capabilities
 			}
 			require("lspconfig").rust_analyzer.setup {
+				capabilities = capabilities
+			}
+			require("lspconfig").denols.setup {
 				capabilities = capabilities
 			}
 		end
