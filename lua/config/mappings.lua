@@ -4,6 +4,8 @@ vim.keymap.set("v", "d", '"_d');
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Disable search highlighting' })
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
+vim.keymap.set('n', '<leader>l', "<cmd>LspInfo<cr>", { desc = "Open LspInfo" })
+vim.keymap.set('n', '<leader>m', "<cmd>Mason<cr>", { desc = "Open Mason" })
 vim.keymap.set('n', '<leader>t', "<cmd>tabnew<cr>", { desc = "Open new tab" })
 vim.keymap.set('n', '<leader><tab>', "<cmd>tabn<cr>", { desc = "Move to next tab" })
 vim.keymap.set('n', '<leader><S-tab>', "<cmd>tabp<cr>", { desc = "Move to prev tab" })
