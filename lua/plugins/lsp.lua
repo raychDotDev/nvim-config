@@ -1,29 +1,27 @@
 return {
+	{ 'neovim/nvim-lspconfig' },
+	{ 'williamboman/mason-lspconfig.nvim' },
 	{
-		"neovim/nvim-lspconfig"
-	},
-	{
-		"mason-org/mason.nvim",
-		opts = {}
-	},
-	{
-		"mason-org/mason-lspconfig.nvim",
-		dependencies = {
-			"neovim/nvim-lspconfig",
-			"mason-org/mason.nvim"
-		},
-		opts = {
-			ensure_installed = {
-				'lua_ls',
-				'csharp_ls',
-				'pylsp',
-				'html',
-				'glsl_analyzer',
-				'rust_analyzer',
-				'denols',
-				'clangd',
-				'serve_d'
+		'williamboman/mason.nvim',
+		opts = {},
+		config = function()
+			require("mason").setup();
+			require('mason-lspconfig').setup {
+				ensure_installed = {
+					'lua_ls',
+					'denols', 
+				},
 			}
-		}
-	}
+			vim.lsp.config['clangd'] = {
+				cmd = {
+					'clangd',
+					'--background-index',
+					'--function-arg-placeholders=0',
+					'--inlay-hints',
+					'--completion-style=detailed',
+				},
+				filetypes = { 'c', 'cpp', 'objc', 'objcpp' },
+			}
+		end,
+	},
 }
