@@ -11,6 +11,15 @@ return {
 					'lua_ls',
 				},
 			}
+			vim.lsp.enable("ols") 
+			vim.lsp.config["ols"] = {
+				init_options = {
+					checker_args = "-strict-style",
+					-- collections = {
+					-- 	{name = "shared", path}
+					-- }
+				}
+			}
 			vim.lsp.enable('denols')
 			vim.lsp.config['denols'] = {
 				cmd = {
