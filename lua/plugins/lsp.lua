@@ -9,6 +9,7 @@ return {
 			require('mason-lspconfig').setup {
 				ensure_installed = {
 					'lua_ls',
+					'ts_ls'
 				},
 			}
 			vim.lsp.enable("ols") 
@@ -20,26 +21,26 @@ return {
 					-- }
 				}
 			}
-			vim.lsp.enable('denols')
-			vim.lsp.config['denols'] = {
-				cmd = {
-					"deno", "lsp"
-				},
-				filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
-				root_markers = { "deno.json", "deno.jsonc", ".git" },
-				settings = {
-					deno = {
-						enable = true,
-						suggest = {
-							imports = {
-								hosts = {
-									["https://deno.land"] = true
-								}
-							}
-						}
-					}
-				}
-			}
+			-- vim.lsp.enable('denols')
+			-- vim.lsp.config['denols'] = {
+			-- 	cmd = {
+			-- 		"deno", "lsp"
+			-- 	},
+			-- 	filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+			-- 	root_markers = { "deno.json", "deno.jsonc", ".git" },
+			-- 	settings = {
+			-- 		deno = {
+			-- 			enable = true,
+			-- 			suggest = {
+			-- 				imports = {
+			-- 					hosts = {
+			-- 						["https://deno.land"] = true
+			-- 					}
+			-- 				}
+			-- 			}
+			-- 		}
+			-- 	}
+			-- }
 			vim.g.markdown_fenced_languages = {
 				"ts=typescript"
 			}
