@@ -1,5 +1,7 @@
 vim.keymap.set("n", "d", '"_d');
 vim.keymap.set("v", "d", '"_d');
+vim.keymap.set("n", "j", 'jzz');
+vim.keymap.set("n", "k", 'kzz');
 
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Disable search highlighting' })
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })

@@ -9,9 +9,11 @@ return {
 			require('mason-lspconfig').setup {
 				ensure_installed = {
 					'lua_ls',
-					'ts_ls'
+					'ts_ls',
+					-- 'zls'
 				},
 			}
+			-- vim.lsp.enable("zls")
 			vim.lsp.enable("ols")
 			vim.lsp.config["ols"] = {
 				init_options = {
@@ -25,6 +27,9 @@ return {
 			vim.lsp.config('denols', {
 				on_attach = on_attach,
 				root_markers = { "deno.json", "deno.jsonc" },
+				cmd = {
+					"deno", "lsp"
+				}
 			})
 
 			vim.lsp.config('ts_ls', {
@@ -55,14 +60,14 @@ return {
 			vim.g.markdown_fenced_languages = {
 				"ts=typescript"
 			}
-			vim.lsp.enable('clangd')
+			-- vim.lsp.enable('clangd')
 			vim.lsp.config['clangd'] = {
 				cmd = {
 					'clangd',
 					'--background-index',
 					'--function-arg-placeholders=0',
 					'--inlay-hints',
-					'--completion-style=detailed',
+					-- '--completion-style=detailed',
 				},
 				filetypes = { 'c', 'cpp', 'objc', 'objcpp' },
 			}
