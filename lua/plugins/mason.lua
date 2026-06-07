@@ -61,7 +61,7 @@ return {
 			vim.g.markdown_fenced_languages = {
 				"ts=typescript"
 			}
-			-- vim.lsp.enable('clangd')
+			vim.lsp.enable('clangd')
 			vim.lsp.config['clangd'] = {
 				cmd = {
 					'clangd',
